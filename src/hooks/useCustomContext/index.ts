@@ -1,12 +1,7 @@
 import { useContext } from "react"
-import { StateContext, dispatchers } from "../../context"
-import { StateInterface } from "../../interfaces"
+import { MyContext, actions } from "../../context"
 
 export default () => {
-  const [state, dispatch] = useContext(StateContext)
-  return {
-    state: state as StateInterface,
-    dispatch,
-    actions: dispatchers
-  }
+  const [state, dispatch] = useContext(MyContext)
+  return { state, dispatch, actions }
 }

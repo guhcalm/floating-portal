@@ -5,6 +5,7 @@
   "author": "guhcalm <guhcalm@outlook.com>",
   "description": "My Minimal Boilerplate to React-Redux-Styled-Components-Typescript-Webpack",
   "license": "MIT",
+  "homepage": ".",
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
