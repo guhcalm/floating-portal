@@ -1,24 +1,25 @@
 import { useEffect } from "react"
-import { Mesh } from "three"
+import { Mesh, MeshLambertMaterial } from "three"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
-import { ClayMaterial } from "../../ClayMaterial"
-import { useCustomContext } from ".."
+import { useMyContext } from "../../context"
 
 const asyncLoadModel = async (name: string) => {
-  const { scene } = await new GLTFLoader().loadAsync(
-    `${process.env.PUBLIC_URL}/models/${name}`
-  )
+  const { scene } = await new GLTFLoader().loadAsync(`./models/${name}`)
   scene.traverse(object => {
     if (!(object instanceof Mesh)) return
     object.material.dispose()
-    object.material = ClayMaterial
+    object.material = new MeshLambertMaterial({
+      color: "#f0f0f0"
+    })
+    object.castShadow = false
+    object.receiveShadow = false
     object.matrixWorldNeedsUpdate = false
   })
   return scene
 }
 
 export default () => {
-  const { dispatch, actions } = useCustomContext()
+  const { dispatch, actions } = useMyContext()
   useEffect(() => {
     ;(async () =>
       dispatch(

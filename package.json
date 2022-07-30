@@ -19,6 +19,7 @@
     "@react-three/drei": "^9.17.3",
     "@react-three/fiber": "^8.2.2",
     "@react-three/postprocessing": "^2.5.5",
+    "gltf-pipeline": "^3.0.5",
     "postprocessing": "^6.28.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -104,6 +105,9 @@
       "prettier"
     ],
     "rules": {
+      "no-return-assign": "off",
+      "typescript-eslint/no-shadow": "off",
+      "no-restricted-globals": "off",
       "react/function-component-definition": "off",
       "new-cap": "off",
       "react/react-in-jsx-scope": "off",

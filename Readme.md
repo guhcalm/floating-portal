@@ -17,3 +17,5 @@ https://guhcalm.github.io/minimal-boilerplate/dist
 ## License
 
 MIT License.
+
+gltf-pipeline -i <source file> -o <output file> --draco.compressionLevel=10
